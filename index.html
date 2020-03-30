@@ -40,16 +40,19 @@ var numpad = document.getElementById('numberpad')
 var enteredSoFar= '';
 
 function choose(valgt) {
-    var myObj = valgt.innerHTML ;  
-    console.log(myObj);
     var tastet = numpad.innerHTML += valgt.innerHTML ;
-
     var correctCode = '8521';
     var enteredSoFar =+ tastet ;
     console.log(enteredSoFar);
-    if( !correctCode.startsWith( enteredSoFar ) ) {
-        numpad.innerText = 'Åpen!';
+    
+    if( !correctCode.startsWith(enteredSoFar) ) {
+        console.log('Wrong');
     }
+
+    if (correctCode==enteredSoFar){
+        numpad.innerText= "Åpen!"
+        console.log('Åpen!')
+      }
 
 
 
