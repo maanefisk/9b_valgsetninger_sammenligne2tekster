@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<link rel="stylesheet" href="stylesheet.css"/>
-
+<link rel="stylesheet" href="stylesheet.css">
+    
+    
 <body>
 
-
-
-
-
+<div id="numberpad" class="nummerboks"> </div>
+    <div>
+<button onclick="choose(this)"  onmouseover="changecolor(this)" onmouseout="changeback(this)">1</button>
+<button onclick="choose(this)"  onmouseover="changecolor(this)" onmouseout="changeback(this)">2</button>
+<button onclick="choose(this)"  onmouseover="changecolor(this)" onmouseout="changeback(this)">3</button>
+<br/>
+<button onclick="choose(this)"  onmouseover="changecolor(this)" onmouseout="changeback(this)">4</button>
+<button onclick="choose(this)"  onmouseover="changecolor(this)" onmouseout="changeback(this)">5</button>
+<button onclick="choose(this)"  onmouseover="changecolor(this)" onmouseout="changeback(this)">6</button>
+<br/>
+<button onclick="choose(this)"  onmouseover="changecolor(this)" onmouseout="changeback(this)">7</button>
+<button onclick="choose(this)"  onmouseover="changecolor(this)" onmouseout="changeback(this)">8</button>
+<button onclick="choose(this)"  onmouseover="changecolor(this)" onmouseout="changeback(this)">9</button>
+<br>
+<button onclick="reset()" onmouseover="changecolor(this)" onmouseout="changeback(this)">Reset</button>
 
 <script>
 
+
+
+function changecolor(tilorange) {
+    tilorange.style.color = "rgb(54, 237, 250)";
     
+}
+function changeback(tilrosaigjen) {
+    tilrosaigjen.style.color = "rgb(54, 250, 81)";
+}
+
+
+
+var numpad = document.getElementById('numberpad')
+var enteredSoFar= '';
+
+function choose(valgt) {
+    var myObj = valgt.innerHTML ;  
+    console.log(myObj);
+    var tastet = numpad.innerHTML += valgt.innerHTML ;
+
+    var correctCode = '8521';
+    var enteredSoFar =+ tastet ;
+    console.log(enteredSoFar);
+    if( !correctCode.startsWith( enteredSoFar ) ) {
+        numpad.innerText = 'Åpen!';
+    }
+
+
+
+}
+function reset() {
+         location.reload(); }
+
+
 </script>
-
-
+    </div>
 </body>
-
-
 </html>
